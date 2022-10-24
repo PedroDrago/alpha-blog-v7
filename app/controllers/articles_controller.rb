@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @articles = Article.all
 
   end
 
@@ -25,6 +26,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    
+
   end
 end

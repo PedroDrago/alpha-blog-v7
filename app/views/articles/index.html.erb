@@ -1,1 +1,21 @@
 <h1>index</h1>
+
+<table>
+    <th>
+        <tr>
+            <th>title</th>
+            <th>description</th>
+            <th colspan='3'>actions</th>
+        </tr>
+    </th>
+    <tbody>
+        <% @articles.each do |article| %>
+        <tr>
+            <td> <%= article.title %> </td>
+            <td> <%= article.description %> </td>
+            <td> <%= %> </td>
+        </tr>
+        <% end %>
+    </tbody>
+
+</table>
