@@ -17,8 +17,12 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
-    redirect_to @article
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+    
 
   end
 
@@ -30,7 +34,11 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
 
-    @article.update(params.require(:article).permit(:title, :description))
+    if @article.update(params.require(:article).permit(:title, :description))
+      redirect_to @article
+    else
+      render 'edit'
+    end
 
   end
 
